@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Laxman Trading and Technologies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0a0f1a; --fg: #f8fafc; --muted: #94a3b8; --accent: #f97316; --primary-light: #3b82f6; --border: rgba(148, 163, 184, 0.1); }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass-card { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 16px; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%); color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; display: inline-block; }
+    .nav-link { color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-link:hover { color: white; }
+    .job-row { transition: all 0.3s; border-bottom: 1px solid var(--border); }
+    .job-row:last-child { border-bottom: none; }
+    .job-row:hover { background: rgba(255,255,255,0.02); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="grid-pattern">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-90 backdrop-blur-xl" style="background: rgba(10, 15, 26, 0.9);">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #1e40af 0%, #f97316 100%);">
+          <svg viewBox="0 0 40 40" class="w-6 h-6 text-white"><path d="M8 28 L20 8 L32 28 L26 28 L20 18 L14 28 Z" fill="currentColor"/><rect x="18" y="22" width="4" height="10" fill="currentColor"/></svg>
+        </div>
+        <span class="text-lg font-bold">LAXMAN</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investment.html" class="nav-link" style="color: var(--accent);">Investment</a>
+        <a href="careers.html" class="nav-link" style="color: white;">Careers</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Join Our <span class="gradient-text">Team</span></h1>
+      <p class="text-lg text-gray-400">We are always looking for passionate individuals who want to build the future of technology and finance.</p>
+    </div>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8 reveal">Open Positions</h2>
+      
+      <div class="glass-card overflow-hidden reveal">
+        <!-- Job 1 -->
+        <div class="job-row p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-semibold">Senior IoT Engineer</h3>
+            <p class="text-gray-400 text-sm">Full-time · Remote</p>
+          </div>
+          <a href="index.html#contact" class="btn-primary">Apply Now</a>
+        </div>
+        
+        <!-- Job 2 -->
+        <div class="job-row p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-semibold">Customer support executives</h3>
+            <p class="text-gray-400 text-sm">Full-time · Hybrid</p>
+          </div>
+          <a href="index.html#contact" class="btn-primary">Apply Now</a>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-row p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-semibold">Financial Analyst (Trading)</h3>
+            <p class="text-gray-400 text-sm">Full-time · On-site</p>
+          </div>
+          <a href="index.html#contact" class="btn-primary">Apply Now</a>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job-row p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-semibold">UI/UX Designer</h3>
+            <p class="text-gray-400 text-sm">Contract · Remote</p>
+          </div>
+          <a href="index.html#contact" class="btn-primary">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section class="py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8 text-center reveal">Why Work With Us?</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 reveal">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4 text-2xl">🌱</div>
+          <h3 class="text-lg font-semibold mb-2">Learning & Growth</h3>
+          <p class="text-gray-400 text-sm">We sponsor courses, certifications, and conferences to help you stay ahead.</p>
+        </div>
+        <div class="p-6 reveal">
+          <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-4 text-2xl">⚖️</div>
+          <h3 class="text-lg font-semibold mb-2">Work-Life Balance</h3>
+          <p class="text-gray-400 text-sm">Flexible hours and remote options ensure you work at your best.</p>
+        </div>
+        <div class="p-6 reveal">
+          <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4 text-2xl">🚀</div>
+          <h3 class="text-lg font-semibold mb-2">Impactful Work</h3>
+          <p class="text-gray-400 text-sm">Work on projects that define the future of tech and finance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+      <p>2024 Laxman Trading and Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

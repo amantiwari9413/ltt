@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Laxman Trading and Technologies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0a0f1a; --fg: #f8fafc; --muted: #94a3b8; --accent: #f97316; --primary-light: #3b82f6; --border: rgba(148, 163, 184, 0.1); }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass-card { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 16px; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
+    .nav-link { color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-link:hover { color: white; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="grid-pattern" style="background-image: linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px); background-size: 60px 60px;">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-90 backdrop-blur-xl" style="background: rgba(10, 15, 26, 0.9);">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #1e40af 0%, #f97316 100%);">
+          <svg viewBox="0 0 40 40" class="w-6 h-6 text-white"><path d="M8 28 L20 8 L32 28 L26 28 L20 18 L14 28 Z" fill="currentColor"/><rect x="18" y="22" width="4" height="10" fill="currentColor"/></svg>
+        </div>
+        <span class="text-lg font-bold">LAXMAN</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link" style="color: white;">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investment.html" class="nav-link" style="color: var(--accent);">Investment</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">About <span class="gradient-text">Laxman</span></h1>
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto">Bridging the gap between technology and financial success. We are dedicated to empowering businesses and individuals through innovation.</p>
+    </div>
+  </section>
+
+  <!-- Founder Section (New) -->
+  <section class="py-16 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="glass-card p-8 md:p-12 lg:p-16 grid md:grid-cols-2 gap-12 items-center reveal">
+        
+        <!-- Image Column -->
+        <div class="relative flex justify-center">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl blur-2xl opacity-20"></div>
+          <img 
+            src="sir.png" 
+            alt="Laxman Rajpurohit - Founder & CEO" 
+            class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover shadow-2xl border-2 border-white/10"
+          >
+        </div>
+
+        <!-- Text Column -->
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 bg-orange-500/10 text-orange-400 border border-orange-500/20">Leadership</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">Laxman Rajpurohit</h2>
+          <p class="text-lg text-blue-400 mb-6">Founder & CEO</p>
+          
+          <p class="text-gray-300 mb-4 leading-relaxed">
+            Mr. Laxman Rajpurohit is a visionary leader with a deep passion for technology and finance. With over a decade of experience in IT infrastructure and capital markets, he founded Laxman Trading and Technologies with a singular goal: to empower individuals and enterprises with the tools they need to succeed in a digital world.
+          </p>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            His expertise spans across Software Architecture, IoT implementation, and Strategic Investment Planning. Under his leadership, the company has grown from a small startup to a trusted partner for businesses seeking digital transformation.
+          </p>
+
+          <div class="border-l-4 border-orange-500 pl-4 mt-6">
+            <p class="text-xl italic text-gray-300 font-medium">"Our vision is to create a future where technology serves humanity, and financial independence is accessible to everyone willing to learn."</p>
+            <p class="text-sm text-gray-500 mt-2">- Laxman Rajpurohit</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Mission/Vision -->
+  <section class="py-16 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="glass-card p-8 border-l-4 border-blue-500 reveal">
+        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+        <p class="text-gray-400">To empower businesses with transformative technology and provide individuals with the knowledge to achieve financial independence. We strive for excellence in every line of code and every investment advice.</p>
+      </div>
+      <div class="glass-card p-8 border-l-4 border-orange-500 reveal">
+        <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+        <p class="text-gray-400">To be the leading partner for digital transformation and financial education, creating a world where technology serves humanity and wealth is accessible to those willing to learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+      <p>2024 Laxman Trading and Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

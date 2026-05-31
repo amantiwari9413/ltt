@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laxman Trading and Technologies | Earn Your Wealth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --fg: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #f97316;
+      --primary: #1e40af;
+      --primary-light: #3b82f6;
+      --border: rgba(148, 163, 184, 0.1);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    
+    /* Modern Mesh Gradient Background (Instead of 3D) */
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: #0a0f1a;
+      background-image: 
+        radial-gradient(at 40% 20%, hsla(218, 82%, 35%, 0.4) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(24, 95%, 55%, 0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(218, 82%, 25%, 0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(24, 95%, 55%, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(218, 82%, 35%, 0.3) 0px, transparent 50%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card {
+      background: rgba(30, 41, 59, 0.5);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--fg);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: var(--accent);
+    }
+    
+    .service-card {
+      background: linear-gradient(180deg, rgba(30, 64, 175, 0.1) 0%, rgba(10, 15, 26, 0.8) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-light), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .service-card:hover::before { transform: scaleX(1); }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(249, 115, 22, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .nav-link {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.3s ease;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover { color: var(--fg); }
+    .nav-link:hover::after { width: 100%; }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="grid-pattern">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-90 backdrop-blur-xl" style="background: rgba(10, 15, 26, 0.9);">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #1e40af 0%, #f97316 100%);">
+          <svg viewBox="0 0 40 40" class="w-6 h-6 text-white">
+            <path d="M8 28 L20 8 L32 28 L26 28 L20 18 L14 28 Z" fill="currentColor"/>
+            <rect x="18" y="22" width="4" height="10" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-wide" style="font-family: 'Space Grotesk', sans-serif;">LAXMAN</span>
+          <span class="text-xs block text-gray-400 -mt-1">Trading and Technologies</span>
+        </div>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investment.html" class="nav-link" style="color: var(--accent);">Investment</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      
+      <a href="index.html#contact" class="btn-primary hidden md:block">Get Started</a>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="nav-link py-2">Home</a>
+        <a href="about.html" class="nav-link py-2">About</a>
+        <a href="index.html#services" class="nav-link py-2">Services</a>
+        <a href="investment.html" class="nav-link py-2">Investment</a>
+        <a href="careers.html" class="nav-link py-2">Careers</a>
+        <a href="index.html#contact" class="nav-link py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- New Static Gradient Background -->
+    <div class="hero-bg"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+      <div class="reveal">
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style="background: rgba(249, 115, 22, 0.1); color: var(--accent); border: 1px solid rgba(249, 115, 22, 0.2);">
+          Innovation Meets Excellence
+        </span>
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 reveal" style="transition-delay: 0.1s;">
+        Transform Your Business<br>
+        <span class="gradient-text">With Smart Technology</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 reveal" style="transition-delay: 0.2s;">
+        We deliver cutting-edge IT solutions, IoT innovations, and Investment Consulting that drive growth, efficiency, and sustainable success.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 0.3s;">
+        <a href="#services" class="btn-primary">
+          Explore Services
+        </a>
+        <a href="investment.html" class="btn-secondary">
+          Investment Consulting
+        </a>
+      </div>
+      
+      <!-- Stats -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 reveal" style="transition-delay: 0.4s;">
+        <div class="p-4">
+          <div class="stat-number" data-count="150">0</div>
+          <div class="text-gray-400 text-sm">Projects Delivered</div>
+        </div>
+        <div class="p-4">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="text-gray-400 text-sm">Client Satisfaction</div>
+        </div>
+        <div class="p-4">
+          <div class="stat-number" data-count="50">0</div>
+          <div class="text-gray-400 text-sm">Tech Experts</div>
+        </div>
+        <div class="p-4">
+          <div class="stat-number" data-count="12">0</div>
+          <div class="text-gray-400 text-sm">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 reveal" style="background: rgba(30, 64, 175, 0.1); color: var(--primary-light); border: 1px solid rgba(30, 64, 175, 0.2);">
+          Our Expertise
+        </span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 reveal" style="transition-delay: 0.1s;">
+          Comprehensive Solutions
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto reveal" style="transition-delay: 0.2s;">
+          From digital transformation to financial growth, we cover all aspects of your business needs.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Investment Service (Highlighted) -->
+        <a href="investment.html" class="service-card reveal lg:col-span-1 lg:row-span-1" style="border-color: rgba(249, 115, 22, 0.3); transition-delay: 0.1s;">
+          <div class="service-icon" style="background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Investment Consulting</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Share market courses, expert-led trading classes, and personalized investment consulting to grow your wealth.
+          </p>
+          <span class="text-orange-400 text-sm mt-4 inline-block font-medium">Explore Investment Services &rarr;</span>
+        </a>
+
+        <div class="service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Custom Software Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Tailored software solutions designed to streamline operations and scale with your business growth.
+          </p>
+        </div>
+        
+        <div class="service-card reveal" style="transition-delay: 0.3s;">
+          <div class="service-icon" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Cloud Solutions</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Secure, scalable cloud infrastructure on AWS, Azure, and Google Cloud.
+          </p>
+        </div>
+        
+        <div class="service-card reveal" style="transition-delay: 0.4s;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">IoT Solutions</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Smart manufacturing, agriculture, and building automation systems.
+          </p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay: 0.5s;">
+          <div class="service-icon" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Cybersecurity</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Comprehensive security audits and robust protection protocols.
+          </p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay: 0.6s;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+              <path d="M12 18h.01"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Mobile Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Native and cross-platform apps for iOS and Android.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 reveal">Contact Us</h2>
+        <p class="text-gray-400 reveal">Ready to start your project? Get in touch.</p>
+      </div>
+      <div class="max-w-2xl mx-auto glass-card p-8 reveal">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" placeholder="Name" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 transition">
+            <input type="email" placeholder="Email" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 transition">
+          </div>
+          <select class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 text-gray-400 transition">
+            <option>Select Service</option>
+            <option>Investment Consulting</option>
+            <option>Software Development</option>
+            <option>IoT Solutions</option>
+          </select>
+          <textarea rows="4" placeholder="Message" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 transition"></textarea>
+          <button type="submit" class="btn-primary w-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+      <p>2024 Laxman Trading and Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Interaction Script -->
+  <script>
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.count);
+          let current = 0;
+          const increment = target / 50;
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              entry.target.textContent = Math.ceil(current);
+              setTimeout(updateCounter, 40);
+            } else {
+              entry.target.textContent = target + '+';
+            }
+          };
+          updateCounter();
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
